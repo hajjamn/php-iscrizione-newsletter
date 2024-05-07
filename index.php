@@ -1,4 +1,26 @@
+<?php
 
+$userEmail = $_POST['userEmail'] ?? '';
+
+function emailControl($email)
+{
+  if
+  (
+    (str_contains($email, '@') === true) && (str_contains($email, '.') === true)
+  ){
+    var_dump('Controllo superato');
+  }
+  else
+  {
+    var_dump('Controllo fallito');
+  }
+};
+
+if ($userEmail != '') {
+  emailControl($userEmail);
+};
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -19,7 +41,7 @@
           <div class="card-body">
             <form action="" method="POST">
               <label for="user-email-input">Indirizzo Email</label>
-              <input type="text" placeholder="nome@esempio.it" id="user-email-input" name="userEmail">
+              <input type="email" placeholder="nome@esempio.it" id="user-email-input" name="userEmail">
               <button type="submit" id="user-email-submit" name="userSubmit">Invia</button>
             </form>
           </div>
@@ -30,9 +52,8 @@
 
 <?php
 
-var_dump($_POST["userSubmit"]);
+var_dump($userEmail);
 echo '<br><br>';
-var_dump($_POST["userEmail"]);
 
 ?>
 
