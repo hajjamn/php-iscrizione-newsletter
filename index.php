@@ -18,11 +18,14 @@ if ($userEmail != '') {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
+    <?php
+    include __DIR__ . '/partials/header.php';
+    ?>
 
   <main>
     <section>
       <div class="container mt-5">
-        <div class="card w-50 m-auto">
+        <div class="card w-50 m-auto text-center">
           <div class="card-header">
             <h2>Iscriviti alla Newsletter</h2>
           </div>
@@ -38,12 +41,9 @@ if ($userEmail != '') {
     </section>
   </main>
 
-<?php
-
-var_dump($userEmail);
-echo '<br><br>';
-
-?>
+  <?php
+  include __DIR__ . '/partials/footer.php';
+  ?>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
