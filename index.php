@@ -8,11 +8,21 @@ function emailControl($email)
   (
     (str_contains($email, '@') === true) && (str_contains($email, '.') === true)
   ){
-    var_dump('Controllo superato');
+    echo 
+    '
+      <div class="alert alert-success text-center" role="alert">
+       Controllo superato
+      </div>
+    ';
   }
   else
   {
-    var_dump('Controllo fallito');
+    echo 
+    '
+      <div class="alert alert-danger text-center" role="alert">
+       Controllo fallito
+      </div>
+    ';
   }
 };
 
