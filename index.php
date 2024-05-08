@@ -3,6 +3,7 @@
 require_once __DIR__ . '/utilities.php';
 
 $userEmail = $_POST['userEmail'] ?? '';
+$isEmailValidated = null;
 
 if ($userEmail != '') {
   $isEmailValidated = emailControl($userEmail);
@@ -30,7 +31,7 @@ if ($userEmail != '') {
     <section>
       <div class="container">
         <?php
-        if ($isEmailValidated === true):
+        if (($isEmailValidated) && ($isEmailValidated === true)):
           ?>
           <div class="alert alert-success text-center" role="alert">
             Controllo superato
