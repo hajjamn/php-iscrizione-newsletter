@@ -1,12 +1,14 @@
 <?php
-
 require_once __DIR__ . '/utilities.php';
+session_start();
 
 $userEmail = $_POST['userEmail'] ?? '';
 $isEmailValidated = null;
 
 if ($userEmail != '') {
   $isEmailValidated = emailControl($userEmail);
+  $_SESSION['result'] = $isEmailValidated;
+  header('Location: ./subscription.php');
 }
 ;
 
@@ -30,7 +32,7 @@ if ($userEmail != '') {
   <main>
     <section>
       <div class="container">
-        <?php
+        <!--         <?php
         if (($isEmailValidated) && ($isEmailValidated === true)):
           ?>
           <div class="alert alert-success text-center" role="alert">
@@ -47,7 +49,7 @@ if ($userEmail != '') {
           </div>
           <?php
         endif
-        ?>
+        ?> -->
       </div>
     </section>
     <section>
@@ -60,7 +62,7 @@ if ($userEmail != '') {
             <form action="" method="POST">
               <label for="user-email-input">Indirizzo Email</label>
               <input type="email" placeholder="nome@esempio.it" id="user-email-input" name="userEmail">
-              <button type="submit" id="user-email-submit" name="userSubmit">Invia</button>
+              <button type="submit" id="user-email-submit" name="userSubmit" class="btn btn-secondary">Invia</button>
             </form>
           </div>
         </div>
